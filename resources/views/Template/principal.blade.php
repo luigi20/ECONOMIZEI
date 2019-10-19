@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Dashboard Template · Bootstrap</title>
+    <title>ECONOMIZEI</title>
 
     <link rel="canonical" href="{{asset('css/app.css')}}">
     <!-- Bootstrap core CSS -->
@@ -36,10 +36,10 @@
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">ECONOMIZEI</a>
-
   <ul class="navbar-nav px-3">
+    
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#" style="text-decoration-color: white">Sign out</a>
+      <a class="nav-link" href="#" style="color: white"><span data-feather="log-out"> </span> Logout</a>
     </li>
   </ul>
 </nav>
@@ -52,31 +52,32 @@
       <div class="sidebar-sticky" id="sidebar-wrapper" >
         <ul class="nav flex-column">
            <li class="nav-item">
-            <a class="nav-link active" href="#">
+              <span data-feather="align-justify" id="toggleSidebar" style="margin-left: 60px" > <button type="button" class="btn btn-light" style="color:gray"></button> </span>
+            <a class="nav-link active" href="{{route('dashboard')}}" id='home'>
               <span data-feather="home"></span>
               <span>Home</span> <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#"  id='receitas'>
               <span data-feather="dollar-sign"></span>
               <span>Receitas</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#" id='despesas'>
               <span data-feather="shopping-cart"></span>
               <span>Despesas</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#" id='tipoReceita'>
               <span data-feather="box"></span>
               <span>Tipos de Receita</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#" id='tipoDespesa'>
               <span data-feather="layers"></span>
               <span>Tipos de Despesa</span>
             </a>
@@ -84,14 +85,8 @@
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="bar-chart-2"></span>
-              <span>Reports</span>
+              <span>Tipos de Pagamento</span>
             </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="log-out"></span>
-                  <span>Logout</span>
-                </a>
           </li>
         </ul>
       
@@ -132,10 +127,7 @@
     </nav>
   </div>
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-
-        <span data-feather="align-justify" id="toggleSidebar" > <button type="button" class="btn btn-light"></button> </span>
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-       
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" style="margin-top:-50px">
         <h1 class="h2">Dashboard</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
@@ -148,22 +140,16 @@
           </button>
         </div>
       </div>
-<div class='container'>
-     @yield('conteudo')
-  </div>
+      <div class='container'>
+          @yield('conteudo')
+      </div>
 
-<script src="{{asset('js/app.js')}}" ></script>
+      <script src="{{asset('js/app.js')}}" ></script>
       <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script src="{{'js/app.js'}}"></script>
-        <script>
-          $('#toggleSidebar').click(function(){
-              $('#sidebar').toggleClass('active');
-              //$('#toggleSidebar').css('margin-left:30px');
-          });
-        </script>
-      </body>
-
-
+      <script src="{{asset('js/menu.js')}}" type="text/javascript"></script>
+          
+    </body>
 </html>
