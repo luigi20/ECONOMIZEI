@@ -12,5 +12,19 @@
 */
 
 Route::get('/dashboard', function () {
-    return view('Home.Home');
+    return view('Home.Home')->with('cabecalho','Dashboard');
 })->name('dashboard');
+
+Route::prefix('/')->group(function(){
+   
+    Route::get('/indexTipoDespesa', function () {
+        return view('TipoDespesa.addTipoDespesa')->with('cabecalho','Tipo de Despesa');
+    })->name('indexTipoDespesa');
+
+    Route::get('/addTipoDespesa', function () {
+        return view('TipoDespesa.addTipoDespesa')->with('cabecalho','Tipo de Despesa');
+    })->name('addTipoDespesa');
+
+    
+});
+

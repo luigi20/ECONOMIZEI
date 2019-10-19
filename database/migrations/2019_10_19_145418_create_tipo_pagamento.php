@@ -16,6 +16,7 @@ class CreateTipoPagamento extends Migration
         Schema::create('tipoPagamento', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
+            $table->string('descricao')->nullable();
             $table->timestamps();
         });
     }

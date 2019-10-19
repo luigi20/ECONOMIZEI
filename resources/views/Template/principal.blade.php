@@ -34,7 +34,7 @@
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <nav class="navbar navbar-dark fixed-top bg-green flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">ECONOMIZEI</a>
   <ul class="navbar-nav px-3">
     
@@ -50,39 +50,40 @@
     <nav class="col-md-2 d-none d-md-block bg-light sidebar" id="sidebar"  > 
       
       <div class="sidebar-sticky" id="sidebar-wrapper" >
-        <ul class="nav flex-column">
-           <li class="nav-item">
-              <span data-feather="align-justify" id="toggleSidebar" style="margin-left: 60px" > <button type="button" class="btn btn-light" style="color:gray"></button> </span>
-            <a class="nav-link active" href="{{route('dashboard')}}" id='home'>
+        <ul class="nav flex-column"> 
+           <span data-feather="align-justify" id="toggleSidebar" style="margin-left: 60px" > <button type="button" class="btn btn-light" style="color:gray"></button> </span>
+           <li class="nav-item {{request()->routeIs('dashboard') ? 'active' : ''}}">
+            
+            <a class="nav-link " href="{{route('dashboard')}}" id='home'>
               <span data-feather="home"></span>
               <span>Home</span> <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item {{request()->routeIs('indexReceita') ? 'active' : ''}}">
             <a class="nav-link" href="#"  id='receitas'>
               <span data-feather="dollar-sign"></span>
               <span>Receitas</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item {{request()->routeIs('indexDespesa') ? 'active' : ''}}">
             <a class="nav-link" href="#" id='despesas'>
               <span data-feather="shopping-cart"></span>
               <span>Despesas</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item {{request()->routeIs('indexTipoReceita') ? 'active' : ''}}">
             <a class="nav-link" href="#" id='tipoReceita'>
               <span data-feather="box"></span>
               <span>Tipos de Receita</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" id='tipoDespesa'>
+          <li class="nav-item {{request()->routeIs('addTipoDespesa') ? 'active' : ''}}">
+            <a class="nav-link" href="{{route('addTipoDespesa')}}" id='tipoDespesa'>
               <span data-feather="layers"></span>
               <span>Tipos de Despesa</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item {{request()->routeIs('indexTipoPagamento') ? 'active' : ''}}">
             <a class="nav-link" href="#">
               <span data-feather="bar-chart-2"></span>
               <span>Tipos de Pagamento</span>
@@ -128,7 +129,7 @@
   </div>
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" style="margin-top:-50px">
-        <h1 class="h2">Dashboard</h1>
+        <h1 class="h2">{{$cabecalho}}</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -140,8 +141,9 @@
           </button>
         </div>
       </div>
-      <div class='container'>
+      <div class='container-conteudo'>
           @yield('conteudo')
+          
       </div>
 
       <script src="{{asset('js/app.js')}}" ></script>

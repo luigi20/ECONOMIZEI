@@ -6762,7 +6762,7 @@ button.bg-info:focus {
 }
 
 .bg-warning {
-  background-color: #ffed4a !important;
+  background-color: rgb(235, 200, 2) !important;
 }
 
 a.bg-warning:hover,
@@ -6795,8 +6795,13 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #228B22  !important;
+  background-color: #343a40  !important;
 }
+
+.bg-green{
+  background-color: rgb(47, 218, 47)  !important;
+}
+
 
 a.bg-dark:hover,
 a.bg-dark:focus,
@@ -10695,7 +10700,7 @@ body {
 }
 
 .sidebar .nav-link.active {
-  color: #007bff;
+  color: #228B22;
 }
 
 .sidebar .nav-link:hover .feather,
@@ -10751,11 +10756,22 @@ body {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
 
-.container{
+.container-conteudo{
 
-  height:200px;
-  width:500px;
-  margin-top:40px;
+  height:500px;
+  width:1050px;
+  margin-top:0px;
+  margin-left:0px;
+  position: absolute;
+  border: 1px solid #228B22;
+  border-radius: 5px;
+}
+
+.container-cards{
+
+  height:340px;
+  width:650px;
+  margin-top:20px;
   margin-left:400px;
   position: absolute;
 }
@@ -10816,4 +10832,17 @@ body {
 
 .buttonleft{
   margin-left:30px
+}
+
+.container-form-addTipoDespesa{
+  height:300px;
+  width:550px;
+  margin-top:0px;
+  margin-left:20px;
+  position: absolute;
+
+}
+
+.nav-item.active{
+  background-color: rgb(57, 219, 57)  !important;
 }

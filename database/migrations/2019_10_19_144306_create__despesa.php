@@ -16,13 +16,16 @@ class CreateDespesa extends Migration
         Schema::create('Despesa', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            //$table->integer('tipoDespesa');
+            $table->unsignedBigInteger('tipoDespesa_id');
+            $table->foreign('tipoDespesa_id')->references('id')->on('tipoDespesa');
             $table->integer('valor');
             $table->integer('mes');
             $table->integer('ano');
             $table->date('vencimento');
-            $table->integer('tipoPagamento')->nullablle();
-            $table->integer('parcela')->nullablle();
+            $table->unsignedBigInteger('tipoPagamento_id');
+            $table->foreign('tipoPagamento_id')->references('id')->on('tipoPagamento');
+            $table->integer('parcela')->nullable();
+            $table->integer('situacao');
             $table->timestamps();
         });
     }

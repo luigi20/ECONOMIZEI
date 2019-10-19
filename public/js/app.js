@@ -36998,7 +36998,7 @@ module.exports = __webpack_require__(/*! E:\projetos-laravel\Economizei\resource
 (function () {
   'use strict'
 
-  feather.replace()
+  feather.replace();
 
   // Graphs
   var ctx = document.getElementById('myChart')
