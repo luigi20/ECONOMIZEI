@@ -49,9 +49,9 @@
       
     <nav class="col-md-2 d-none d-md-block bg-light sidebar" id="sidebar"  > 
       
-      <div class="sidebar-sticky" id="sidebar-wrapper" >
+      <div class="sidebar-sticky" id="sidebar-wrapper" ><span data-feather="align-justify" id="toggleSidebar" style="margin-left: 60px" > <button type="button" class="btn btn-light" style="color:gray"></button> </span>
         <ul class="nav flex-column"> 
-           <span data-feather="align-justify" id="toggleSidebar" style="margin-left: 60px" > <button type="button" class="btn btn-light" style="color:gray"></button> </span>
+           
            <li class="nav-item {{request()->routeIs('dashboard') ? 'active' : ''}}">
             
             <a class="nav-link " href="{{route('dashboard')}}" id='home'>
@@ -151,7 +151,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script src="{{'js/app.js'}}"></script>
-      <script src="{{asset('js/menu.js')}}" type="text/javascript"></script>
+      <script src="{{asset('js/sidebar-hide.js')}}" type="text/javascript"></script>
           
     </body>
 </html>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoReceita extends Migration
+class CreateTipoDespesas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTipoReceita extends Migration
      */
     public function up()
     {
-        Schema::create('tipoReceita', function (Blueprint $table) {
+        Schema::create('tipo_despesas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
             $table->string('descricao')->nullable();
@@ -28,6 +28,6 @@ class CreateTipoReceita extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipoReceita');
+        Schema::dropIfExists('tipo_despesas');
     }
 }

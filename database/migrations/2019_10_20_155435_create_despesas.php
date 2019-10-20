@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoPagamento extends Migration
+class CreateDespesas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateTipoPagamento extends Migration
      */
     public function up()
     {
-        Schema::create('tipoPagamento', function (Blueprint $table) {
+        Schema::create('despesas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->string('descricao')->nullable();
+            //$table->integer('tipoReceita');
+            $table->integer('valor');
+            $table->integer('mes');
+            $table->integer('ano');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateTipoPagamento extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipoPagamento');
+        Schema::dropIfExists('despesas');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDespesa extends Migration
+class CreateReceitas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,13 @@ class CreateDespesa extends Migration
      */
     public function up()
     {
-        Schema::create('Despesa', function (Blueprint $table) {
+        Schema::create('receitas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->unsignedBigInteger('tipoDespesa_id');
-            $table->foreign('tipoDespesa_id')->references('id')->on('tipoDespesa');
+            //$table->integer('tipoReceita');
             $table->integer('valor');
             $table->integer('mes');
             $table->integer('ano');
-            $table->date('vencimento');
-            $table->unsignedBigInteger('tipoPagamento_id');
-            $table->foreign('tipoPagamento_id')->references('id')->on('tipoPagamento');
-            $table->integer('parcela')->nullable();
-            $table->integer('situacao');
             $table->timestamps();
         });
     }
@@ -37,6 +31,6 @@ class CreateDespesa extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Despesa');
+        Schema::dropIfExists('receitas');
     }
 }
