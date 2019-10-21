@@ -28,3 +28,50 @@ Route::prefix('/')->group(function(){
     
 });
 
+Route::prefix('/')->group(function(){
+   
+    Route::get('/indexTipoReceita', function () {
+        return view('TipoReceita.addTipoReceita')->with('cabecalho','Tipo de Receita');
+    })->name('indexTipoReceita');
+
+    Route::get('/addTipoReceita', function () {
+        return view('TipoReceita.addTipoReceita')->with('cabecalho','Tipo de Receita');
+    })->name('addTipoReceita');
+
+});
+
+Route::prefix('/')->group(function(){
+   
+    Route::get('/indexTipoPagamento', function () {
+        return view('TipoPagamento.addTipoPagamento')->with('cabecalho','Tipo de Pagamento');
+    })->name('indexTipoReceita');
+
+    Route::get('/addTipoPagamento', function () {
+        return view('TipoPagamento.addTipoPagamento')->with('cabecalho','Tipo de Pagamento');
+    })->name('addTipoPagamento');
+
+});
+
+Route::prefix('/')->group(function(){
+   
+    Route::get('/indexReceita', function () {
+        return view('Receita.addReceita')->with('cabecalho','Receita');
+    })->name('indexReceita');
+
+    Route::get('/addReceita', function () {
+        return view('Receita.addReceita')->with('cabecalho','Receita');
+    })->name('addReceita');
+
+});
+
+Route::prefix('/')->group(function(){
+   
+    Route::get('/indexDespesa', function () {
+        return view('Despesa.addDespesa')->with('cabecalho','Despesa');
+    })->name('indexDespesa');
+
+    Route::get('/addDespesa', function () {
+        return view('Despesa.addDespesa')->with('cabecalho','Despesa');
+    })->name('addDespesa');
+
+});

@@ -6799,7 +6799,7 @@ button.bg-light:focus {
 }
 
 .bg-green{
-  background-color: rgb(47, 218, 47)  !important;
+  background-color: rgb(80, 245, 80)  !important;
 }
 
 
@@ -10763,7 +10763,7 @@ body {
   margin-top:0px;
   margin-left:0px;
   position: absolute;
-  border: 1px solid #228B22;
+  border: 1px solid rgb(80, 245, 80);
   border-radius: 5px;
 }
 
@@ -10844,5 +10844,5 @@ body {
 }
 
 .nav-item.active{
-  background-color: rgb(57, 219, 57)  !important;
+  background-color: rgb(80, 245, 80)  !important;
 }

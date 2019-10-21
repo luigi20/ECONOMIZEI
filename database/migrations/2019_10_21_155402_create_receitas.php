@@ -16,7 +16,8 @@ class CreateReceitas extends Migration
         Schema::create('receitas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            //$table->integer('tipoReceita');
+            $table->unsignedBigInteger('tipo_receita_id');
+            $table->foreign('tipo_receita_id')->references('id')->on('tipo_receitas');
             $table->integer('valor');
             $table->integer('mes');
             $table->integer('ano');

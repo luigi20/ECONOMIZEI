@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
+    <meta name="csrf-token" content="{{csrf_token()}}" > 
     <title>ECONOMIZEI</title>
 
     <link rel="canonical" href="{{asset('css/app.css')}}">
@@ -35,7 +35,7 @@
   </head>
   <body>
     <nav class="navbar navbar-dark fixed-top bg-green flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">ECONOMIZEI</a>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{route('dashboard')}}">ECONOMIZEI</a>
   <ul class="navbar-nav px-3">
     
     <li class="nav-item text-nowrap">
@@ -52,39 +52,39 @@
       <div class="sidebar-sticky" id="sidebar-wrapper" ><span data-feather="align-justify" id="toggleSidebar" style="margin-left: 60px" > <button type="button" class="btn btn-light" style="color:gray"></button> </span>
         <ul class="nav flex-column"> 
            
-           <li class="nav-item {{request()->routeIs('dashboard') ? 'active' : ''}}">
+           <li class="nav-item {{request()->routeIs('dashboard')  ? 'active' : ''}}">
             
             <a class="nav-link " href="{{route('dashboard')}}" id='home'>
               <span data-feather="home"></span>
               <span>Home</span> <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item {{request()->routeIs('indexReceita') ? 'active' : ''}}">
-            <a class="nav-link" href="#"  id='receitas'>
+          <li class="nav-item {{request()->routeIs('indexReceita') || request()->routeIs('addReceita')? 'active' : ''}}">
+            <a class="nav-link" href="{{route('addReceita')}}" id='receitas'>
               <span data-feather="dollar-sign"></span>
               <span>Receitas</span>
             </a>
           </li>
-          <li class="nav-item {{request()->routeIs('indexDespesa') ? 'active' : ''}}">
-            <a class="nav-link" href="#" id='despesas'>
+          <li class="nav-item {{request()->routeIs('indexDespesa') || request()->routeIs('addDespesa') ? 'active' : ''}}">
+            <a class="nav-link" href="{{route('addDespesa')}}" id='despesas'>
               <span data-feather="shopping-cart"></span>
               <span>Despesas</span>
             </a>
           </li>
-          <li class="nav-item {{request()->routeIs('indexTipoReceita') ? 'active' : ''}}">
-            <a class="nav-link" href="#" id='tipoReceita'>
+          <li class="nav-item {{request()->routeIs('indexTipoReceita') || request()->routeIs('addTipoReceita') ? 'active' : ''}}">
+            <a class="nav-link" href="{{route('addTipoReceita')}}" id='tipoReceita'>
               <span data-feather="box"></span>
               <span>Tipos de Receita</span>
             </a>
           </li>
-          <li class="nav-item {{request()->routeIs('addTipoDespesa') ? 'active' : ''}}">
+          <li class="nav-item {{request()->routeIs('addTipoDespesa') || request()->routeIs('indexTipoDespesa') ? 'active' : ''}}">
             <a class="nav-link" href="{{route('addTipoDespesa')}}" id='tipoDespesa'>
               <span data-feather="layers"></span>
               <span>Tipos de Despesa</span>
             </a>
           </li>
-          <li class="nav-item {{request()->routeIs('indexTipoPagamento') ? 'active' : ''}}">
-            <a class="nav-link" href="#">
+          <li class="nav-item {{request()->routeIs('addTipoPagamento') || request()->routeIs('indexTipoPagamento')? 'active' : ''}}">
+            <a class="nav-link" href="{{route('addTipoPagamento')}}">
               <span data-feather="bar-chart-2"></span>
               <span>Tipos de Pagamento</span>
             </a>
